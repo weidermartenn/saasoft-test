@@ -1,10 +1,10 @@
-interface Label {
+export interface Label {
     text: string;
 }
 
 export interface Account {
     label: Label[];
-    recordType: string;
-    login: 'Локальная' | 'LDAP';
+    recordType: 'Локальная' | 'LDAP';
+    login: string;
     password: string | null;
 }

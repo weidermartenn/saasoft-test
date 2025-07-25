@@ -16,7 +16,13 @@ import { createApp } from 'vue'
 // Styles
 import 'unfonts.css'
 
-const app = createApp(App)
+import { createPinia } from 'pinia'
+import piniaPluginPersistedState from 'pinia-plugin-persistedstate'
+
+const pinia = createPinia()
+pinia.use(piniaPluginPersistedState)
+
+const app = createApp(App).use(pinia)
 
 registerPlugins(app)
 
